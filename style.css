@@ -1,0 +1,44 @@
+:root{--y:#f6b700;--y2:#ffd54a;--yl:#fff6d6;--ink:#2a2208;--mut:#6b5f3a;--w:#fff;--line:#f0e2a8}
+@media(prefers-color-scheme:dark){:root{color-scheme:light}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.65 Georgia,"Times New Roman",serif;color:var(--ink);background:var(--w)}
+h1,h2,h3,.btn,nav a,.logo{font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 .5em;line-height:1.2}
+h3{margin:.2em 0 .3em;font-size:1.15rem}
+p{max-width:68ch}img{max-width:100%;height:auto;display:block}
+header{position:sticky;top:0;z-index:9;background:var(--w);border-bottom:3px solid var(--y);padding-top:env(safe-area-inset-top,0px)}
+.bar{max-width:1100px;margin:auto;padding:10px 20px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.3rem;text-decoration:none;color:var(--ink)}.logo span{background:var(--y);padding:0 8px;border-radius:4px}
+nav{display:flex;flex-wrap:wrap;gap:4px}
+nav a{text-decoration:none;color:var(--ink);padding:6px 12px;border-radius:20px;font-size:.95rem}
+nav a:hover,nav a:focus-visible{background:var(--yl)}
+.page{display:none;scroll-margin-top:90px}
+.page:target,body:not(:has(.page:target)) #home{display:block}
+#home:target~*{}
+body:has(#about:target) nav a[href="#about"],body:has(#wellness:target) nav a[href="#wellness"],body:has(#faq:target) nav a[href="#faq"],body:has(#order:target) nav a[href="#order"],body:not(:has(.page:target)) nav a[href="#home"],body:has(#home:target) nav a[href="#home"]{background:var(--y);font-weight:700}
+.wrap{max-width:1100px;margin:auto;padding:56px 20px}
+.hero{background:linear-gradient(180deg,var(--yl),var(--w))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.btn{display:inline-block;background:var(--y);color:var(--ink);font-weight:800;text-decoration:none;padding:14px 28px;border-radius:8px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover,.btn:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--w)}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:24px}
+.card{background:var(--w);border:2px solid var(--line);border-left:6px solid var(--y);padding:18px 20px;border-radius:6px}
+.card p{margin:.3em 0 0;color:var(--mut)}
+.band{background:var(--yl);border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:28px}
+.pack .card{text-align:center;border-left-width:2px;border-top:6px solid var(--y)}
+.pack img{margin:0 auto 12px;max-height:300px;width:auto}
+ol.steps{padding-left:1.2em}ol.steps li{margin:0 0 .8em}
+details{border:2px solid var(--line);border-radius:6px;padding:12px 18px;margin:0 0 12px;background:var(--w)}
+summary{cursor:pointer;font:700 1.05rem "Trebuchet MS",Arial,sans-serif}
+details[open]{border-color:var(--y);background:var(--yl)}
+.note{font-size:.88rem;color:var(--mut);border-top:1px solid var(--line);padding-top:14px}
+footer{background:var(--ink);color:#f3e9c4;margin-top:40px}
+footer .wrap{padding:36px 20px}footer p{font-size:.85rem;max-width:90ch}footer a{color:var(--y2)}
+@media(max-width:760px){.hero .wrap,.split{grid-template-columns:1fr}.hero img{max-height:340px;margin:auto}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
